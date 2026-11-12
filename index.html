@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffced">
+  <meta name="description" content="Happy birthday!">
+  <title>산천아, Happy birthday!</title>
+  <link rel="stylesheet" href="style.css?v=font-path">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav class="section-nav" aria-label="화면 이동">
+    <a href="#hello" aria-label="1. 생일 축하" aria-current="location"><span>01</span></a>
+    <a href="#wish" aria-label="2. 소원 빌기"><span>02</span></a>
+    <a href="#candles" aria-label="3. 초 끄기"><span>03</span></a>
+  </nav>
+  <main>
+    <section id="hello" class="scene hello" aria-labelledby="hello-title">
+      <div class="ambient star star-one" aria-hidden="true">✦</div><div class="ambient star star-two" aria-hidden="true">✧</div><div class="ambient flower" aria-hidden="true">✿</div>
+      <div class="section-content hero-content">
+        
+        <h1 id="hello-title">Happy<br><span>birthday!</span><svg class="title-spark" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 1v58M1 30h58M9 9l42 42M9 51 42 9"/></svg></h1>
+        
+        <div class="video-frame hero-video">
+          <div class="frame-bar"><span><i></i><i></i><i></i></span><span></span><span>♡</span></div>
+          <video id="birthday-video" class="site-video" src="assets/birthday.mp4" poster="assets/birthday-poster.jpg" aria-label="생일 축하 영상" controls playsinline preload="metadata"></video>
+          <span class="tape tape-left" aria-hidden="true"></span><span class="tape tape-right" aria-hidden="true"></span>
+        </div>
+        <a class="scroll-cue" href="#wish" aria-label="소원빌기로 이동"><span>↓</span></a>
+      </div>
+      
+    </section>
+    <section id="wish" class="scene wish" aria-labelledby="wish-title">
+      <div class="section-content wish-layout">
+        <div class="wish-copy"><h2 id="wish-title">소원을 빌어봐!</h2></div>
+        <div class="wish-card">
+          <audio id="wish-audio" data-src="assets/wish-voice.m4a" preload="metadata" loop></audio>
+          <button id="wish-audio-toggle" class="audio-toggle" type="button" aria-label="음성 재생" hidden>▶</button>
+          <div class="cake-wrap" aria-hidden="true"><svg class="cake-art" viewBox="0 0 300 240"><ellipse cx="150" cy="216" rx="112" ry="13" fill="#e4c975"/><path d="M47 204h206v10H47z" fill="#fffdf0"/><path d="M65 126h170v76H65z" fill="#f2bb70"/><path d="M65 151h170v12H65zM65 184h170v9H65z" fill="#fff2c6"/><path d="M65 121h170v28h-15v-12h-18v20h-18v-20h-23v13h-19v-13h-22v20h-19v-20H83v12H65z" fill="#fffdf0"/><path d="M76 111h148v13H76z" fill="#fffdf0"/><path d="M106 81h12v30h-12zM145 71h12v40h-12zM184 81h12v30h-12z" fill="#83b9da"/><path d="M106 89h12v6h-12zM145 80h12v6h-12zM184 89h12v6h-12z" fill="#d3ebf6"/><g class="cake-flames" fill="#f6a82a"><path d="M108 75v-8h4V55h4v12h4v8h-4v5h-4v-5zM147 65v-8h4V45h4v12h4v8h-4v5h-4v-5zM186 75v-8h4V55h4v12h4v8h-4v5h-4v-5z"/></g><g fill="#d66d55"><path d="M94 118h9v8h-9zM145 116h10v9h-10zM199 118h9v8h-9z"/></g><g fill="#f2ce53"><path d="M34 78h5v16h-5zM28 83h17v5H28zM253 101h5v16h-5zM247 106h17v5h-17z"/></g></svg></div>
+          <form id="wish-form"><label class="sr-only" for="wish-input">소원</label><div class="textarea-wrap"><textarea id="wish-input" maxlength="150" rows="3" required></textarea></div><button class="primary-button" id="wish-submit" type="submit">소원 보내기 <span>↗</span></button><p class="sr-only" id="wish-status" role="status" aria-live="polite"></p></form>
+        </div>
+      </div><a class="next-section" href="#candles" aria-label="초 끄기로 이동">↓</a>
+    </section>
+    <section id="candles" class="scene candles" aria-label="초 끄기">
+      <div class="section-content candle-content">
+        <div class="video-frame candle-video">
+          <div class="frame-bar"><span><i></i><i></i><i></i></span><span></span><span>✦</span></div>
+          <video id="candle-video" class="site-video" src="assets/candles.mp4" poster="assets/candles-poster.jpg" aria-label="초 끄기 영상" playsinline preload="metadata"></video>
+        </div>
+        <button id="blow-button" class="primary-button blow-button" type="button">초 끄기 <span aria-hidden="true">✧</span></button>
+        <p id="candle-status" class="sr-only" role="status" aria-live="polite"></p>
+        <a class="back-top" href="#hello">처음부터 다시 보기 ↗</a>
+      </div>
+    </section>
+  </main>
+  <div id="effects" aria-hidden="true"></div>
+</body>
+</html>
